@@ -50,7 +50,7 @@ const Discount = styled.div`
 `;
 
 function CabinRow({ cabin }) {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  // const [isOpenModal, setIsOpenModal] = useState(false);
   const {
     name,
     maxCapacity,
@@ -115,7 +115,7 @@ function CabinRow({ cabin }) {
             <Modal.Window name={"delete"}>
               <ConfirmDelete
                 resourceName={name}
-                onConfirm={() => mutate(cabinId)}
+                onConfirm={() => mutate({ cabinId })}
               />
             </Modal.Window>
           </Menus.Menu>
