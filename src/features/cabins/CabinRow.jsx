@@ -61,7 +61,7 @@ function CabinRow({ cabin }) {
     description,
   } = cabin;
 
-  const { isPending, mutate } = useDeleteCabin();
+  const { isPending, mutate: deleteCabin } = useDeleteCabin();
 
   const { createCabin } = useCreateCabin();
 
@@ -115,7 +115,7 @@ function CabinRow({ cabin }) {
             <Modal.Window name={"delete"}>
               <ConfirmDelete
                 resourceName={name}
-                onConfirm={() => mutate({ cabinId })}
+                onConfirm={() => deleteCabin({ cabinId })}
               />
             </Modal.Window>
           </Menus.Menu>
